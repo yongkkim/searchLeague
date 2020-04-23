@@ -1,0 +1,42 @@
+quickSort(arr: number[], start: number, end: number){
+
+  if(start < end) {
+
+    // You can learn about how the pivot value is derived in the comments below
+    let pivot = this.partition(arr, start, end);
+
+    // Make sure to read the below comments to understand why pivot - 1 and pivot + 1 are used
+    // These are the recursive calls to quickSort
+    this.quickSort(arr, start, (pivot - 1));
+    this.quickSort(arr, pivot + 1, end);
+  } 
+
+}
+partition(arr: number[], start: number, end: number){ 
+  let pivot = end;
+  let i = start - 1;
+  let j = start;
+
+  // Increment j up to the index preceding the pivot
+  while (j < pivot) {
+    if (arr[j] > arr[pivot]) 
+	{
+      j++;
+    }
+    else 
+	{
+      i++;
+      this.swap(arr, j, i)
+      j++;
+    }
+  }
+	this.swap(arr, i + 1, pivot)
+	
+	return i + 1
+  }
+  
+  swap(arr: number[], firstIndex: number, secondIndex: number){
+  let temp = arr[firstIndex];
+  arr[firstIndex] = arr[secondIndex];
+  arr[secondIndex] = temp;
+  }

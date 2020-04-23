@@ -1,0 +1,115 @@
+<div class="profile">
+  <img class="profileImg" src={{info?.profileimg}} />
+  <table class="profileInfos">
+    <tr>
+      <td class="proinfos">{{info?.name}}</td>
+    </tr>
+    <tr>
+      <td class="proinfos">LEVEL : {{info?.summonerLevel}}</td>
+    </tr>
+    <tr>
+      <td class="proinfos">Winning Rate : {{winRate}}</td>
+    </tr>
+    <tr>
+      <td class="proinfos">Rank : {{rankinfo}}</td>
+    </tr>
+  </table>
+</div>
+<!--below part is to create a list of game history. Each history is a button to toggle down for details-->
+<div id="content">
+  <div *ngIf="spinner" class="spinner-border text-danger"></div>
+  <div class="eachgame" *ngFor="let m of images; index as p">
+    <ul class="btnhistory">
+      <li class="btnonehistory" id={{m[m.length-1]}} [style.background-color]="setBackground(initialhis[p][14])"
+        *ngIf="initialhis[p]" (click)="toggle(m[m.length-1], p, initialhis[p], $event)">
+        <div class="myChamp">
+          <img src={{m[0]}} (mouseover)="pop(-4, '', initialhis[p][15], $event)" (mouseout)="out()" />
+        </div>
+        <ul class="spells">
+          <!-- in function pop, parameter "-1" is only for button pop ups -->
+          <li class="spell"><img class="spellimg"
+              (mouseover)="pop(-1, initialhis[p][1].spellurl, initialhis[p][1].description,  $event)" (mouseout)="out()"
+              src={{initialhis[p][1].spellurl}} /></li>
+          <li class="spell"><img class="spellimg"
+              (mouseover)="pop(-1, initialhis[p][2].spellurl, initialhis[p][2].description, $event)" (mouseout)="out()"
+              src={{initialhis[p][2].spellurl}} /></li>
+        </ul>
+        <div class="items">
+          <!-- use *ngFor -->
+          <!--initialhis array would better be dictionary-->
+          <ng-container *ngFor="let item of initialhis[p] | slice: 3 : 10;">
+            <img class="item" *ngIf="item != 'nothing'; else empty"
+              (mouseover)="pop(-1, item.itemsrc, item.description, $event)" (mouseout)="out()"
+              [src]="checkImage(item)" />
+            <ng-template #empty>
+              <div class="item"></div>
+            </ng-template>
+          </ng-container>
+        </div>
+        <div class="forme">
+          <div id="gamemode">
+            <p>{{initialhis[p][17]}}</p>
+          </div>
+          <div id="kda">
+            <p (mouseover)="pop(-2, '', initialhis[p][11], $event)" (mouseout)="out()">{{initialhis[p][10]}}</p>
+          </div>
+          <div id="minion">
+            <p>{{initialhis[p][12]}}</p>
+          </div>
+          <div id="money">
+            <p>{{initialhis[p][13]}}</p>
+          </div>
+          <div id="time">
+            <p>{{initialhis[p][18]}}</p>
+            <p class="creationDate">{{initialhis[p][19]}}</p>
+          </div>
+          <button id="togglebtn" *ngIf="findtype()" (click)="toggle(m[m.length-1], p, $event)"><i
+              class="fa fa-caret-down"></i></button>
+        </div>
+      </li>
+    </ul>
+    <!--below part is a toggle when click one your game history on the list-->
+    <div class="container" id={{p}}>
+      <ul class="history">
+        <li *ngFor="let z of data(m[m.length-1]) | slice: 0 : 10; index as j"
+          [style.background-color]="setBackground(z[14])" class="onehistory">
+          <div class="oneChamp">
+            <img class="champ" src={{z[0]}} (mouseover)="pop(-4, '', z[15], $event)" (mouseout)="out()" />
+          </div>
+          <ul class="spells">
+            <li class="spell"><img class="spellimg" (mouseover)="pop(j, z[1].spellurl, z[1].description, $event)"
+                (mouseout)="out()" src={{z[1].spellurl}} /></li>
+            <li class="spell"><img class="spellimg" (mouseover)="pop(j, z[2].spellurl, z[2].description, $event)"
+                (mouseout)="out()" src={{z[2].spellurl}} /></li>
+          </ul>
+          <div class="items">
+            <ng-container *ngFor="let item of z | slice: 3 : 10;">
+              <img class="item" *ngIf="item != 'nothing'; else empty"
+                (mouseover)="pop(-1, item.itemsrc, item.description, $event)" (mouseout)="out()"
+                [src]="checkImage(item)" />
+              <ng-template #empty>
+                <div class="item"></div>
+              </ng-template>
+            </ng-container>
+          </div>
+          <div class="forone">
+            <div class="accountforone">
+              <a href="#" (click)="searchIt(z[16][0])">{{z[16][0]}}</a>
+            </div>
+            <div class="kmm">
+              <div class="kdaforone">
+                <p (mouseover)="pop(-3, '', z[11], $event)" (mouseout)="out()">{{z[10]}}</p>
+              </div>
+              <div class="minionforone">
+                <p>{{z[12]}}</p>
+              </div>
+              <div class="moneyforone">
+                <p>{{z[13]}}</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

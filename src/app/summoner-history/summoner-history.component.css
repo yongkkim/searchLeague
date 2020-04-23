@@ -1,0 +1,648 @@
+/* Spinner */
+.spinner-border {
+	display: block;
+    width: 10rem;
+    height: 10rem;
+	border: 1.25em solid currentColor;
+	border-right-color: transparent;
+	margin: 0 auto;
+}
+
+.text-danger {
+    color: #ef5765!important;
+}
+/* css for profile */
+div.profile{
+	display: flex;
+    margin: 50px auto;
+    width: 40%;
+    height: 175px;
+    color: white;
+    font-weight: bold;
+	border-radius: 35px;
+	background-color: black;
+	border: 2px groove gold;
+}
+img.profileImg{
+	flex: 0 0 40%;
+	height: 100%;
+	border-radius: 35px;
+}
+table.profileInfos{
+	margin-top: 15px;
+	margin-left: 6%;
+	flex: 0 0 50%;
+}
+table.profileInfos tr:not(:first-child){
+	width: 100%;
+}
+table.profileInfos tr:first-child td{
+	height: 40px;
+	font-size: 25px;
+}
+.proinfos{
+	height: 30px;
+}
+
+/* css for button display*/
+ul.btnhistory{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	list-style-type: none;
+	padding: 0;
+}
+ul.btnhistory:hover{
+	cursor: pointer;
+}
+li.btnonehistory{
+	box-shadow: inset 0 0 40px darkslategrey;
+	transition: transform .2s;
+}
+li.btnonehistory:hover{
+	transform: scale(1.05);
+}
+li.btnonehistory div.myChamp{
+	float: left;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+li.btnonehistory div.myChamp img{
+	border: none;
+	height: 80px;
+	width: 80px;
+}
+
+li.btnonehistory ul.spells{
+	float:left;
+	padding: 0;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+li.btnonehistory ul.spells li.spell{
+	display: block;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+}
+li.btnonehistory div.items{
+	display: flex;
+	height: 80px;
+	flex-wrap: wrap;
+	float: left;
+}
+li.btnonehistory div.items .item{
+	align-self: center;
+}
+li.btnonehistory div.items img.item{
+	display: inline-block;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+}
+li.btnonehistory div.items div.item{
+	display: inline-block;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+	box-shadow: inset 0 0 8px #000000;
+	background: white;
+}
+li.btnonehistory div.forme{
+	display: -webkit-flex;
+  	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: inherit;
+	height: 80px;
+}
+li.btnonehistory div.forme div#kda, div#gamemode, div#minion, div#money, div#time{
+	flex: 1;
+	text-align: center;
+}
+li.btnonehistory div#time{
+	flex-direction: column;
+}
+li.btnonehistory div#kda p, div#gamemode p, div#minion p, div#money p, div#time p{
+	margin: 0 5px 0 5px;
+	margin: 0;
+	color: black;
+}
+/* after click button css */
+ul.history{
+	display: flex;
+	height: 325px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+li.onehistory{
+	display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 5px;
+	box-shadow: inset 0 0 15px darkslategrey;
+	margin-right: 5px;
+}
+li.onehistory div.forone{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+	height: 60px;
+	padding-top: 10px;
+	flex: 1.5;
+	flex-direction: column-reverse;
+}
+li.onehistory div.forone div.accountforone, div.kmm{
+	flex: 1;
+	padding-left: 7px;
+}
+li.onehistory div.forone div.kmm div.kdaforone, div.minionforone, div.moneyforone{
+	display: inline-block;
+	width: 60px;
+}
+li.onehistory div.forone div.kdaforone p, div.minionforone p, div.moneyforone p{
+	margin: 0;
+	color: black;
+	font-size: 14px;
+}
+li.onehistory div.forone div.accountforone a:hover{color: black; font-weight: bold}
+
+li.onehistory div.oneChamp{
+	padding: 0;
+	float: left;
+}
+li.onehistory div.oneChamp img.champ{
+	height: 60px;
+    width: 60px;
+}
+li.onehistory ul.spells{
+	float:left;
+	padding: 0;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+li.onehistory ul.spells li.spell{
+	display: block;
+	padding: 0;
+	height: 30px;
+    width: 30px;
+}
+ul.spells li.spell img{
+	height: 100%;
+	width: 100%;
+	vertical-align: top;
+}
+li.onehistory div.items{
+	display: flex;
+	height: 60px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: space-around;
+	flex: 1;
+}
+li.onehistory div.items img.item{
+	display: inline-block;
+	padding: 0;
+	height: 30px;
+    width: 30px;
+}
+li.onehistory div.items div.item{
+	display: inline-block;
+	padding: 0;
+	height: 30px;
+	width: 30px;
+	opacity: 0.7;
+	background-color: white;
+	box-shadow: inset 0 0 4px #000000;
+}
+.item{
+	vertical-align: top;
+}
+li.onehistory div.items img.nothing, div.nothing{
+	display: none;
+}
+li.onehistory div.items > img.item:hover, 
+ul.spells > li.spell:hover, div.oneChamp > img.champ, 
+div.forone > div.kmm > div.kdaforone > p:hover{
+	cursor: pointer;
+}
+
+
+div.container{
+	cursor: auto;
+	position: relative;
+	width: 100%;
+	display: none;
+	padding: 5px 15px 5px 15px;
+}
+.eachgame:last-child ul.btnhistory{
+	margin: 0 auto;
+}
+div#content{
+	margin: 0 auto;
+	width: 70%;
+}
+
+.fa{
+	color: rgb(46, 137, 255);
+	height: 100%;
+}
+button#togglebtn{
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	background-color: whitesmoke;
+	z-index: 9;
+	height: 100%;
+	padding: 0 3px;
+	border: none;
+}
+div.column, div.hcolumn{
+	height: 25px;
+	margin: 0;
+}
+div.hcolumn{
+	height: 40px;
+}
+ul#columnName{
+	float: left;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul#columnName2, ul#hcolumnName{
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin-right: 5px;
+	/*justify-content: space-between;*/
+}
+ul#hcolumnName{
+	margin: 0 auto;
+	width: 70%;
+	height: 100%;
+}
+ul#columnName li, ul#columnName2 li, ul#hcolumnName li{
+	border-width: 2px;
+	border-style: ridge;
+	text-align: center;
+}
+ul#hcolumnName li{border-radius: 10px;}
+ul#columnName2 li, ul#columnName li{border-radius: 8px;}
+
+ul#columnName li, ul#columnName2 li, ul#hcolumnName li{
+	position: relative;
+	display: inline-block;
+	background: rgba(163, 207, 200, 0.6);
+	height: 25px;
+}
+ul#hcolumnName li, ul#hcolumnName li img{height: 100%;}
+ul#hcolumnName li:nth-child(4) img{
+	width: 20px;
+	height: 65%;
+	margin-top: 3px;
+	padding-top: 7px;
+}
+ul#hcolumnName li:first-child img{
+	padding: 6px 6px 6px 6px;
+}
+ul#hcolumnName li:nth-child(5) img{
+	margin-top: 6px;
+}
+ul#hcolumnName li:not(:first-child):not(:nth-child(4)):not(:nth-child(5)) img{
+	padding-top: 4px;
+}
+ul#hcolumnName li:last-child img{
+	padding-bottom: 7px;
+}
+ul#hcolumnName li.hspelli img, li.hkdai img, li.hminioni img, li.hgoldi img{
+	margin-left: 7px;
+	margin-top: 2px;
+}
+ul#hcolumnName li.hchampi{width: 85px;}
+ul#hcolumnName li.hspelli{width: 40px; margin: 0 1px 0 1px;}
+ul#hcolumnName li.hitemi{width: 280px;}
+ul#hcolumnName li:not(.hchampi):not(.hspelli):not(.hitemi){width: calc((100% - 85px - 42px - 280px) / 5);}
+
+ul#columnName2 li.accounti{flex: 1;}
+
+ul#columnName2 li img{
+	height: 85%;
+}
+ul#columnName li.champi{width: 60px;}
+ul#columnName li.champi img{
+	width: 30%;
+	height: 75%;
+}
+ul#columnName li.spelli{width: 30px;}
+ul#columnName li.spelli img{
+    width: 90%;
+    height: 85%;
+	padding-left: 6px;
+	padding-top: 2px;
+}
+ul#columnName li.itemi{width: 127px;}
+ul#columnName li.itemi img{
+	width: 18%;
+	height: 85%;
+	padding-top: 1px;
+}
+ul#columnName2 li.accounti img{
+	height: 75%;
+}
+
+@media only screen and (min-width: 1024px){
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	li.onehistory {
+		width: 64%;
+	}
+
+	div#content {
+		width: 99%;
+	}
+	
+	.container{
+		margin-left: unset;
+		margin-right: unset;
+	}
+	div.container{
+		width: 78%;
+	}
+	li.btnonehistory:hover{
+		transform: scale(1);
+	}
+}
+
+@media only screen and (min-width: 375px) and (max-width: 768px){
+	.spinner-border {
+		display: block;
+		width: 7rem;
+		height: 7rem;
+	}
+	div.profile{
+		margin: 35px auto;
+		font-size: 8px;
+		border-radius: 20px;
+		width: 70%;
+		height: 125px;
+	}
+	img.profileImg{
+		border-radius: 20px;
+	}
+	table.profileInfos {
+		height: 100px;
+		margin-left: unset;
+	}
+	table.profileInfos tr:first-child td{
+		height: 30px;
+		font-size: 18px;
+	}
+	.proinfos {
+		height: 15px;
+	}
+	ul.btnhistory{
+		width: 100%;
+		margin: 0 auto;
+	}
+	li.btnonehistory{
+		margin-bottom: 2px;
+		box-shadow: inset 0 0 17px darkslategrey;
+		transition: none;
+	}
+	li.btnonehistory:hover{
+		transform: scale(1);
+	}
+	li.btnonehistory div.myChamp img{
+		height: 40px;
+		width: 40px;
+	}
+	li.btnonehistory ul.spells li.spell{
+		display: block;
+		padding: 0;
+		height: 20px;
+		width: 20px;
+	}
+	li.btnonehistory div.items{
+		flex-direction: column;
+		align-content: flex-start;
+		height: 40px;
+		flex: 1;
+		float: none;
+	}
+	li.btnonehistory div.items img.item{
+		height: 20px;
+		width: 20px;
+	}
+	li.btnonehistory div.items div.item{
+		height: 20px;
+		width: 20px;
+	}
+	li.btnonehistory div.forme{
+		float: right;
+		/*flex: 3 chrome mobile*/
+    	flex: 2;
+		height: 40px;
+	}
+	li.btnonehistory div.forme div#kda, div#gamemode, div#minion, div#money, div#time{
+		flex: 1;
+		text-align: center;
+	}
+	li.btnonehistory div#kda p, div#gamemode p, div#minion p, div#money p, div#time p{
+		font-size: 7px;
+	}
+	ul#columnName li{
+		width: 25px;
+		height: 25px;
+	}
+	li.onehistory{
+		margin-bottom: 2px;
+		width: 90%;
+		margin: 0 auto;
+		box-shadow: inset 0 0 10px darkslategrey;
+	}
+
+	ul.history li:nth-child(6) {
+		margin-top: 10px;
+	}
+
+	ul.history{
+		width: 100%;
+		height: 50%;
+	}
+	li.onehistory div.oneChamp img.champ{
+		height: 40px;
+		width: 40px;
+	}
+	li.onehistory ul.spells li.spell{
+		height: 20px;
+		width: 20px;
+	}
+	li.onehistory div.items{
+		height:40px;
+	}
+	li.onehistory div.items img.item{
+		height: 20px;
+		width: 20px;
+	}
+	li.onehistory div.items div.item{
+		height: 20px;
+		width: 20px;
+		box-shadow: inset 0 0 4px #000000;
+	}
+	div.container{
+		position: relative;
+		width: 100%;
+		padding: 5px 0;
+		display: none;
+	}
+	div#content{
+		width: 85%;
+		border-width: 3px;
+	}
+	button#togglebtn{
+		width: 10px;
+		margin-left: 3px;
+	}
+	li.onehistory div.forone{
+		height: 40px;
+		padding-top: 0;
+		margin-left: 15px;
+		flex:3;
+		flex-direction: column-reverse;
+	}
+	li.onehistory div.forone div.kmm div.kdaforone, div.minionforone, div.moneyforone{
+		width: 40px;
+		padding-left: 0;
+	}
+	li.onehistory div.forone div.kdaforone p, div.minionforone p, div.moneyforone p{
+		font-size: 9px;
+	}
+	li.onehistory div.forone div.accountforone{
+		font-size: 7px;
+		flex: none;
+		width: 100%;
+		margin-bottom: 7px;
+	}
+	li.onehistory div.forone div.accountforone a{
+		word-break: break-word;
+	}
+	li.btnonehistory{
+		display: flex;
+	}
+	ul#columnName2{
+		display: flex;
+		list-style-type: none;
+		margin-right: 5px;
+	}
+	ul#columnName li.champi{width: 40px;}
+	ul#columnName li.champi img{
+		width: 25%;
+		height: 80%;
+		padding-bottom: 5px;
+	}
+	ul#columnName li.spelli{width: 20px;}
+	ul#columnName li.spelli img{
+		width: 95%;
+		height: 85%;
+		padding: 0;
+		padding-left: 4px;
+		padding-bottom: 2px;
+	}
+	ul#columnName li.itemi{
+		width: 85.65px;
+	}
+	ul#columnName li.itemi img{
+		width: 18%;
+		height: 95%;
+		padding-bottom: 3px;
+	}
+	ul#columnName2, ul#columnName{
+		padding: 3px 0 0 0;
+		margin: 0;
+	}
+
+	div.column, div.hcolumn{
+		height: 25px;
+		margin: 0;
+	}
+	ul#hcolumnName{
+		display: flex;
+		list-style-type: none;
+		padding: 0;
+		margin: 0 auto;
+		margin-right: 5px;
+		padding-right: 18px;
+		width: 100%;
+		height: 100%;
+	}
+	ul#hcolumnName li{
+		border-style: ridge;
+		border-width: 2px;
+		border-radius: 7px;
+	}
+	ul#columnName li, ul#columnName2 li, ul#hcolumnName li{
+		position: relative;
+		display: inline-block;
+		height: 20px;
+	}
+	ul#columnName2 li.accounti img{
+		height: 85%;
+		padding-bottom: 4px;
+	}
+	ul#hcolumnName li, ul#hcolumnName li img{height: 100%;}
+	ul#hcolumnName li:nth-child(4) img{
+		width: 16px;
+		height: 70%;
+		margin-bottom: 4px;
+	}
+	ul#hcolumnName li:nth-child(5) img,
+	ul#hcolumnName li:nth-child(6) img, 
+	ul#hcolumnName li:nth-child(7) img{
+		margin-left: 6px;
+		width: 25px;
+		height: 25px;
+	}
+	ul#hcolumnName li:not(:first-child) img{
+		padding-top: 2px;
+		margin-top: 0;
+	}
+	ul#hcolumnName li:last-child img{
+		padding-bottom: 0;
+		margin-bottom: 4px;
+	}
+	ul#hcolumnName li:first-child img{
+		padding: 5px 2px 3px 2px;
+	}
+	ul#hcolumnName li.hspelli img, li.hminioni img{
+		margin-left: 2px;
+		margin-top: 0;
+	}
+	ul#hcolumnName li:not(:first-child):not(:nth-child(4)):not(:nth-child(5)) img{
+		padding-top: 0;
+	}
+	ul#hcolumnName li.hspelli img{margin-top: 1px;}
+	ul#hcolumnName li.hchampi{width: 43px;}
+	ul#hcolumnName li.hspelli{width: 20px; margin: 0 1px 0 1px;}
+	ul#hcolumnName li.hitemi{width: 85px;}
+	ul#hcolumnName li:not(.hchampi):not(.hspelli):not(.hitemi){width: calc((100% - 43px - 22px - 85px) / 5);}
+	ul#hcolumnName li.hgametypei, li.hkdai{margin-left: 1px;}
+
+	ul#hcolumnName li{
+		text-align: center;
+	}
+
+	.fa{
+		font: normal normal normal 10px/3 FontAwesome
+	}
+}

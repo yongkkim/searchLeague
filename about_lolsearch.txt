@@ -1,0 +1,18 @@
+This is a web application for searching match history in League of Legends.
+
+You can simply type a Summoner name(username) in League of Legends.
+
+You would have a list of most recent 20 matches.
+
+You can mouse over images to read descriptions and name of items or champions and you can also click one of the list to see bit more details.
+
+You can search other users as well by either clicking one of usernames in your match history or entering username.
+
+The web application searches any lastest 20 matches within 6 months. You won't see match history that you have played 6 months ago.
+
+The application supports mobile version and other browsers as well. You can free to use any devices.
+
+Thank you for visiting this website and if you have any idea or feedback that can improve this application, you are very welcome to reach me via email
+ykkim6@hotmail.com
+
+Thank you.

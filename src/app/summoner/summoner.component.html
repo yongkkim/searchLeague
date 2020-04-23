@@ -1,0 +1,17 @@
+<div [@message]="status" id="message">
+    If you cannot find summoner, a problem is with either a username you type or API Key update
+    <span id="close" (click)="message()">GOT IT</span>
+</div>
+<div id="start">
+    <div id="textLogo"><span id="lol">LOL</span>LY ONE</div>
+    <form id="searchform" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div id="searchbox">
+            <input id="search" formControlName="summonerName" autocomplete="off"
+                placeholder=" Summoner Name..  ex)dragonsoup2" required />
+            <button id="submit" type="submit">GO</button>
+            <div id="err1" class="alert alert-danger" *ngIf="summonerName.invalid">Cannot be empty</div>
+            <div id="err2" class="alert alert-danger" *ngIf="summonerName.valid"></div>
+        </div>
+    </form>
+    <app-summoner-history *ngIf="submitted && checkObj(heroes)" [userinfo]="heroes"></app-summoner-history>
+</div>
