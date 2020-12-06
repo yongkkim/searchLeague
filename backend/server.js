@@ -14,7 +14,7 @@ var corsOptions = {
 app.use(cors());
 
 app.route("/api/image/").get((req, res) => {
-    fetch("http://ddragon.leagueoflegends.com/cdn/10.1.1/data/en_US/champion.json")
+    fetch("http://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/champion.json")
         .then(res => res.json())
         .then(data => {
             res.send({ data });
@@ -25,7 +25,7 @@ app.route("/api/image/").get((req, res) => {
 });
 
 app.route("/api/spell/").get((req, res) => {
-    fetch("http://ddragon.leagueoflegends.com/cdn/10.1.1/data/en_US/summoner.json")
+    fetch("http://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/summoner.json")
         .then(res => res.json())
         .then(data => {
             res.send({ data });
@@ -36,7 +36,7 @@ app.route("/api/spell/").get((req, res) => {
 });
 
 app.route("/api/item/").get((req, res) => {
-    fetch("https://ddragon.leagueoflegends.com/cdn/10.1.1/data/en_US/item.json")
+    fetch("https://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/item.json")
         .then(res => res.json())
         .then(data => {
             res.send({ data });
@@ -48,7 +48,8 @@ app.route("/api/item/").get((req, res) => {
 });
 
 app.route("/api/profile/").get((req, res) => {
-    fetch("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + req.query.name + "?api_key=RGAPI-c3d4126d-0e72-4689-abc0-394f2e5d520c")
+
+    fetch("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + req.query.name + "?api_key=RGAPI-20fc2bfc-8054-435a-b8f7-61f51d554e57")
         .then(res => res.json())
         .then(data => {
             res.send({ data });
@@ -59,7 +60,7 @@ app.route("/api/profile/").get((req, res) => {
 });
 
 app.route('/api/ranked/').get((req, res) => {
-    fetch('https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/' + req.query.summonerID + '?api_key=RGAPI-c3d4126d-0e72-4689-abc0-394f2e5d520c')
+    fetch('https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/' + req.query.summonerID + '?api_key=RGAPI-20fc2bfc-8054-435a-b8f7-61f51d554e57')
         .then(res => res.json())
         .then(data => {
             res.send({ data });
@@ -70,7 +71,7 @@ app.route('/api/ranked/').get((req, res) => {
 });
 
 app.route("/api/data/").get((req, res) => {
-    fetch("https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/" + req.query.id + "?beginIndex=0&endIndex=20&api_key=RGAPI-c3d4126d-0e72-4689-abc0-394f2e5d520c")
+    fetch("https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/" + req.query.id + "?beginIndex=0&endIndex=20&api_key=RGAPI-20fc2bfc-8054-435a-b8f7-61f51d554e57")
         .then(res => res.json())
         .then(data => {
             res.send({ data });
@@ -81,7 +82,7 @@ app.route("/api/data/").get((req, res) => {
 });
 
 app.route("/api/player/").get((req, res) => {
-    Promise.all(req.query.gameids.map(id => fetch("https://na1.api.riotgames.com/lol/match/v4/matches/" + id + "?api_key=RGAPI-c3d4126d-0e72-4689-abc0-394f2e5d520c")))
+    Promise.all(req.query.gameids.map(id => fetch("https://na1.api.riotgames.com/lol/match/v4/matches/" + id + "?api_key=RGAPI-20fc2bfc-8054-435a-b8f7-61f51d554e57")))
         .then(res => Promise.all(res.map(res => res.json())))
         .then(data => {
             res.send({ data });

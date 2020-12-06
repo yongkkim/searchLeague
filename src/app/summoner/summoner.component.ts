@@ -25,7 +25,7 @@ export class SummonerComponent implements OnInit {
   public form: FormGroup;
   public summonerName: FormControl;
   public submitted: boolean = false;
-  private profileUrl: string = "http://ddragon.leagueoflegends.com/cdn/10.1.1/img/profileicon/";
+  private profileUrl: string = "http://ddragon.leagueoflegends.com/cdn/10.24.1/img/profileicon/";
 
   constructor(private summonerService: SummonerService, private route: ActivatedRoute) { }
 

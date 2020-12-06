@@ -24,9 +24,9 @@ export class SummonerHistoryComponent implements OnInit {
   public images: Array<any[]> = [];
   private memberimages: Array<Array<string[]>> = [];
   private players: Player[];
-  private url: string = "http://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/";
-  private spellurl: string = "http://ddragon.leagueoflegends.com/cdn/10.1.1/img/spell/";
-  private itemurl: string = "http://ddragon.leagueoflegends.com/cdn/10.1.1/img/item/";
+  private url: string = "http://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/";
+  private spellurl: string = "http://ddragon.leagueoflegends.com/cdn/10.24.1/img/spell/";
+  private itemurl: string = "http://ddragon.leagueoflegends.com/cdn/10.24.1/img/item/";
   private spell: Spell;
   private item: Item;
   private keys = new Map();
@@ -91,6 +91,7 @@ export class SummonerHistoryComponent implements OnInit {
   }
   getHistory(id: string): void {
     this.summonerHistoryService.getitem().subscribe(im => {
+      console.log(im.data["data"])
       this.item = im.data["data"];
     });
     this.summonerHistoryService.getspell().subscribe(spl => {
@@ -126,7 +127,6 @@ export class SummonerHistoryComponent implements OnInit {
               let accinfo: Array<any[]> = [];
               let temp: Array<any[]> = [];
               let me: any[] = [];
-              let account: string[] = [];
 
               let currdate = new Date();
               let timetaken: number = player.gameDuration;
@@ -371,8 +371,9 @@ export class SummonerHistoryComponent implements OnInit {
     }
   }
   finditem(itemnum: number): any {
-    //console.log(itemnum);
+    console.log(itemnum);
     if (itemnum != 0) {
+      if (!this.item[itemnum]) return "nothing";
       this.item[itemnum].itemsrc = this.itemurl + this.item[itemnum].image.full;
       return this.item[itemnum];
     } else if (itemnum == 0) {

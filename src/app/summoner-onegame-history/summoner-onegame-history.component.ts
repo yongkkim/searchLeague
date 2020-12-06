@@ -14,7 +14,7 @@ export class SummonerOnegameHistoryComponent implements OnInit {
   private champimages: Champ;
   private images: string[] = [];
   private url: string =
-    "http://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/";
+    "http://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/";
   private typed: boolean = false;
   private players: Player[];
   @Input("info") private matchinfo: Match;
